@@ -53,5 +53,19 @@ model CarInformation {
   year         Int
 
   infoText String @map("info-text")
+
   @@map("carinfo")
-  }
+}
+
+//
+// model CarBuying {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now()) @map("created-at")
+//   updatedAt DateTime @updatedAt @map("updated-at")
+//
+//   login String
+//   car Car
+//   carId Int
+//
+//   @@map("carbuy")
+// }

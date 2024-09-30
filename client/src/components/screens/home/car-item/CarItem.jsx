@@ -7,11 +7,14 @@ function CarItem({ car }) {
 
 	return (
 		<div key={car.id} className={styles.item}>
-			<div
-				className={styles.image}
-				style={{
-					 backgroundImage: `url(${car.image})`,
-				}}>
+			<div>
+				
+				<img src={car.image}
+					 style={{
+						 width: '100%',
+						 height: '400px'
+					 }}
+					 alt=''/>
 			</div>
 			<div className={styles.info}>
 				<h2>{car.name}</h2>
