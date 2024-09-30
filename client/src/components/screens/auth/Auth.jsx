@@ -15,6 +15,7 @@ const Auth = () => {
 	
 	return (
 			<div>
+				<h1 style={{color: 'red', textAlign: 'center'}}>Authorization</h1>
 				{isLoading ?  <div>Загрузка...</div> : <div></div>}
 					<form onSubmit={handleSubmit(onSubmit)} style={{
 						textAlign: "center",
@@ -57,7 +58,6 @@ const Auth = () => {
 						<Button clickHandler={() => setType('login')}>Sign in</Button>
 					<Button clickHandler={() => setType('register')}>Sign up</Button>
 					</form>
-				Auth
 			</div>
 	)
 }

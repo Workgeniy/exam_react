@@ -18,8 +18,13 @@ const Layout = ({ children }) => {
 
     return(
         <div>
-            {/*<Header />*/}
-            <button onClick={logoutHandler}>Logout</button>
+            <button style={{
+                width: '100px',
+                height: '50px',
+                backgroundColor: 'grey',
+                borderRadius: '10px',
+                fontSize: '18px'
+            }} onClick={logoutHandler}>Выйти из аккаунта</button>
             { children }
         </div>
     )

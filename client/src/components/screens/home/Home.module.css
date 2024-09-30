@@ -8,7 +8,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 200px;
+	height: 400px;
 }
 
 .info {
@@ -21,4 +21,8 @@
 
 .info p {
 	margin-bottom: 10px;
+}
+
+.blue{
+	color: cadetblue;
 }

@@ -1,9 +1,11 @@
-import {useEffect, useState} from 'react'
-import { Link, useParams } from 'react-router-dom'
-import CarItem from '../home/car-item/CarItem'
+import {useState} from 'react'
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import {carService} from "../../../services/car.service.js";
 import {useQuery} from "@tanstack/react-query";
 import CarFullItem from "./car-full-item/CarFullItem.jsx";
+import {useAuth} from "../../../hooks/useAuth.js";
+import Cookies from "js-cookie";
+import {TOKEN} from "../../../app.constans.js";
 
 const CarDetail = () => {
 	const { id } = useParams()
@@ -19,13 +21,25 @@ const CarDetail = () => {
 		queryFn: () => carService.getById(id)
 	})
 
-	if (isLoading) return <p>Loading...</p>
+	const navigate = useNavigate();
+	const logoutHandler = () => {
+		navigate('/home/')
+	}
+
+		if (isLoading) return <p>Loading...</p>
 
 	if (!data?.data) return <p>Car not found</p>
 
 		return (
 			<div>
-				<Link to='/home'>Back</Link>
+				<button style={{
+					width: '100px',
+					height: '50px',
+					fontSize: '18px',
+					borderRadius: '10px',
+					backgroundColor: 'grey'
+				}}
+					onClick={logoutHandler}>Назад</button>
 				<CarFullItem car={data.data} />
 			</div>
 

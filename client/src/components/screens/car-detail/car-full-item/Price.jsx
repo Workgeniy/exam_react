@@ -2,7 +2,7 @@ import React from 'react'
 
 const Price = ({ price }) => {
 	return (
-		<p>
+		<p style={{color: 'red'}}>
 			{new Intl.NumberFormat('ru-RU', {
 				style: 'currency',
 				currency: 'USD',
